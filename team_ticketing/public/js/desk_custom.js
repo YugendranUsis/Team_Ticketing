@@ -36,13 +36,33 @@
 
 
 
-    // if (frappe.session.user !== "Administrator") {
-    //     // Apply CSS to hide search bar
-    //     const style = document.createElement("style");
-    //     style.innerHTML = `
-    //         .input-group.search-bar.text-muted {
-    //             display: none !important;
-    //         }
-    //     `;
-    //     document.head.appendChild(style);
-    // }
+//  frappe.ready(() => {
+//     if (frappe.session && frappe.session.user && frappe.session.user !== "Administrator") {
+//         console.log("Hiding search bar for non-admin users");
+//         console.log("User:", frappe.session.user);
+//         const style = document.createElement("style");
+//         style.innerHTML = `
+//             .input-group.search-bar.text-muted {
+//                 display: none !important;
+//             }
+//         `;
+//         document.head.appendChild(style);
+//     }
+// });
+
+frappe.after_ajax(() => {
+    const current_user = frappe.boot?.user?.name || frappe.boot?.profile?.name || frappe.session.user;
+    console.log("User:", current_user);
+
+    if (current_user !== "Administrator") {
+        const style = document.createElement("style");
+        style.innerHTML = `
+            .input-group.search-bar.text-muted {
+                display: none !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+});
+
+
