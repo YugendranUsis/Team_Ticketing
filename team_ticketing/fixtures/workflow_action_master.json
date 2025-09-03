@@ -1,0 +1,65 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-08-25 14:49:44.652468",
+  "name": "Submit",
+  "workflow_action_name": "Submit"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-08-09 18:22:57.820815",
+  "name": "Close Ticket",
+  "workflow_action_name": "Close Ticket"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-08-09 18:18:32.687664",
+  "name": "Escalate",
+  "workflow_action_name": "Escalate"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-08-09 18:10:52.893771",
+  "name": "Revise",
+  "workflow_action_name": "Revise"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-04-29 16:40:36.086270",
+  "name": "Approve",
+  "workflow_action_name": "Approve"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-04-29 16:40:36.087659",
+  "name": "Reject",
+  "workflow_action_name": "Reject"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-05-10 10:08:03.406377",
+  "name": "Re Submit",
+  "workflow_action_name": "Re Submit"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-08-09 18:15:55.009931",
+  "name": "Resolved",
+  "workflow_action_name": "Resolved"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-05-09 11:31:55.707018",
+  "name": "Acknowledge",
+  "workflow_action_name": "Acknowledge"
+ }
+]

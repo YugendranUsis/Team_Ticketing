@@ -1,0 +1,30 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.workflow_state == \"Resolved\"\n",
+ "creation": "2025-08-11 12:32:34.172102",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Tickets",
+ "enabled": 1,
+ "event": "Value Change",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>Hi Your Ticket Has Been Resolved.</p>\n",
+ "message_type": "Markdown",
+ "modified": "2025-08-26 18:03:36.803358",
+ "modified_by": "Administrator",
+ "module": "Team Ticketing",
+ "name": "Ticket Resolved",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "owner"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 1,
+ "subject": "{{doc.name}} is Resolved",
+ "value_changed": "workflow_state"
+}

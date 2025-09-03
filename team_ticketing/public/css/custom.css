@@ -1,0 +1,49 @@
+/* Hide "Built on Frappe" footer */
+#footer-powered,.web-footer,
+footer .text-muted {
+    display: none !important;
+}
+
+/* Hide ERPNext/Frappe workspaces */
+.sidebar-item[data-label="ERPNext"],
+.sidebar-item[data-label="Frappe"] {
+    display: none !important;
+}
+
+/* Desk Form sidebar */
+.form-sidebar { display: none !important; }
+
+/* List view sidebar */
+.layout-side-section { display: none !important; }
+
+/* (Optional) Report sidebar */
+.report-sidebar { display: none !important; }
+
+.form-message-container{ display: none !important; }
+
+.input-group.search-bar.text-muted{ display: none !important;}
+
+/* hide the menu button in view page*/
+.menu-btn-group{ display: none !important;}
+.standard-actions .flex{ display: none !important;}
+
+/* Workspace button below of workspace edit and add  */
+.workspace-footer{ display: none !important;}
+
+
+/* Print ,Previous and Next button in view page  */
+.page-icon-group.hidden-xs.hidden-sm{
+    display: none !important;
+}
+
+.nav-item.dropdown.dropdown-notifications.chat-navbar-icon {
+    display: none !important;
+}
+
+#changelog_feed,#todays_events,#chat-bubble{
+     display: none !important;
+}
+
+.p-3.chat-bubble{
+    display: none !important;
+}

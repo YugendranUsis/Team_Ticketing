@@ -1,0 +1,37 @@
+{
+ "cards": [
+  {
+   "card": "Employees"
+  },
+  {
+   "card": "Total Tickets"
+  },
+  {
+   "card": "Resolved Tickets"
+  },
+  {
+   "card": "Projects"
+  },
+  {
+   "card": "Customers"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Departments Tickets",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-08-21 14:48:54.060779",
+ "dashboard_name": "Team Ticketing",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-08-21 15:29:12.491039",
+ "modified_by": "Administrator",
+ "module": "Team Ticketing",
+ "name": "Team Ticketing",
+ "owner": "Administrator"
+}

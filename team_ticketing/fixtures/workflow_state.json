@@ -1,0 +1,83 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-08-13 11:21:11.930728",
+  "name": "Ticket Closed",
+  "style": "Danger",
+  "workflow_state_name": "Ticket Closed"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-08-13 11:21:40.114420",
+  "name": "Reject",
+  "style": "Danger",
+  "workflow_state_name": "Reject"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-05-08 12:28:50.045554",
+  "name": "Created",
+  "style": "",
+  "workflow_state_name": "Created"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-08-19 14:40:19.283511",
+  "name": "Revise",
+  "style": "Warning",
+  "workflow_state_name": "Revise"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-08-19 14:40:12.666141",
+  "name": "Approve",
+  "style": "Success",
+  "workflow_state_name": "Approve"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-08-20 15:20:49.485726",
+  "name": "Escalated",
+  "style": "Warning",
+  "workflow_state_name": "Escalated"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-05-09 11:40:06.821875",
+  "name": "Acknowledged",
+  "style": "",
+  "workflow_state_name": "Acknowledged"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-08-13 11:20:42.756837",
+  "name": "Resolved",
+  "style": "Primary",
+  "workflow_state_name": "Resolved"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-08-20 15:21:10.130691",
+  "name": "Submitted",
+  "style": "",
+  "workflow_state_name": "Submitted"
+ }
+]

@@ -1,0 +1,54 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"9PRvlQryd3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome</span>\",\"col\":12}},{\"id\":\"avJmXriLBm\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Tickets\",\"col\":4}},{\"id\":\"-11JV04FBy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Submitted Tickets\",\"col\":4}},{\"id\":\"42ifuEjjPY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Tickets\",\"col\":4}},{\"id\":\"pFW0fBO5o7\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Revised Tickets\",\"col\":4}},{\"id\":\"BsBgK0tA-o\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Rejected Tickets\",\"col\":4}},{\"id\":\"jDiVTKS1wB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Closed Tickets\",\"col\":4}}]",
+ "creation": "2025-08-21 17:02:57.123368",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "mark-as-read",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Ticket Manager",
+ "links": [],
+ "modified": "2025-08-22 10:03:21.855569",
+ "modified_by": "Administrator",
+ "module": "Team Ticketing",
+ "name": "Ticket Manager",
+ "number_cards": [
+  {
+   "label": "Total Tickets",
+   "number_card_name": "Total Tickets"
+  },
+  {
+   "label": "Resolved Tickets",
+   "number_card_name": "Resolved Tickets"
+  },
+  {
+   "label": "Revised Tickets",
+   "number_card_name": "Revised Tickets"
+  },
+  {
+   "label": "Rejected Tickets",
+   "number_card_name": "Rejected Tickets"
+  },
+  {
+   "label": "Closed Tickets",
+   "number_card_name": "Closed Tickets"
+  },
+  {
+   "label": "Submitted Tickets",
+   "number_card_name": "Submitted Tickets"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 39.0,
+ "shortcuts": [],
+ "title": "Ticket Manager"
+}

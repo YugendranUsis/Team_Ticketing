@@ -1,0 +1,38 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"79_GNGbbwE\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Welcome</b></span>\",\"col\":12}},{\"id\":\"Lgr0YZAvAU\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Tickets\",\"col\":4}}]",
+ "creation": "2025-08-11 16:02:18.362878",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-monthly-rank",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Team Ticket",
+ "links": [],
+ "modified": "2025-08-22 10:42:12.730904",
+ "modified_by": "Administrator",
+ "module": "Team Ticketing",
+ "name": "Team Ticket",
+ "number_cards": [
+  {
+   "label": "My Tickets",
+   "number_card_name": "Total Tickets"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Employee"
+  }
+ ],
+ "sequence_id": 35.1,
+ "shortcuts": [],
+ "title": "Team Ticket"
+}

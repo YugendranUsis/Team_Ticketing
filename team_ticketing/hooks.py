@@ -4,6 +4,8 @@ app_publisher = "Yugendran"
 app_description = "Team Ticketing"
 app_email = "yugendran@usistech.com"
 app_license = "mit"
+home_page = "/app/dashboard/Team Ticketing"
+
 
 # Apps
 # ------------------
@@ -24,6 +26,27 @@ app_license = "mit"
 # Includes in <head>
 # ------------------
 
+#The below JS used for updating the about pop up page
+app_include_js = [
+    "assets/team_ticketing/js/about.js",
+    "/assets/team_ticketing/js/desk_custom.js",
+]
+# 
+app_include_css = [
+    "/assets/team_ticketing/css/custom.css",
+]
+
+website_context = { 
+                   "splash_image": "/assets/team_ticketing/images/logo.png",
+                   "favicon": "/assets/team_ticketing/images/logo.png",
+                   "app_title": "Team Ticketing",
+                   "app_name": "Team Ticketing",
+                   "app_logo": "/assets/team_ticketing/images/logo.png",
+                   "brand_html": '<img src="/assets/team_ticketing/images/logo.png" style="height: 24px; margin-right: 8px;">',
+
+}
+
+
 # include js, css files in header of desk.html
 # app_include_css = "/assets/team_ticketing/css/team_ticketing.css"
 # app_include_js = "/assets/team_ticketing/js/team_ticketing.js"
@@ -33,7 +56,7 @@ app_license = "mit"
 # web_include_js = "/assets/team_ticketing/js/team_ticketing.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "team_ticketing/public/scss/website"
+# website_theme_scss = "team_ticketing/public/scss/theme_switch"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -47,6 +70,7 @@ app_license = "mit"
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
 
 # Svg Icons
 # ------------------
@@ -83,7 +107,7 @@ app_license = "mit"
 # ------------
 
 # before_install = "team_ticketing.install.before_install"
-# after_install = "team_ticketing.install.after_install"
+after_install = "team_ticketing.setup.install.after_install"
 
 # Uninstallation
 # ------------
@@ -124,6 +148,25 @@ app_license = "mit"
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
+permission_query_conditions = {
+    "Tickets": [
+        "team_ticketing.team_ticketing.doctype.tickets.tickets.get_permission_query_conditions"
+    ]
+}
+
+has_permission = {
+    "Tickets": [
+        "team_ticketing.team_ticketing.doctype.tickets.tickets.has_permission"
+    ]
+}
+
+
+
+
+override_doctype_class = {
+    "File": "team_ticketing.setup.install.CustomFile"
+}
+
 
 # DocType Class
 # ---------------
@@ -171,6 +214,29 @@ app_license = "mit"
 
 # before_tests = "team_ticketing.install.before_tests"
 
+#Branding
+# app_logo = "/assets/team_ticketing/images/logo.png"
+# app_icon = "octicon octicon-file-directory"
+# app_color = "grey"
+# app_title = "Team Ticketing"
+# app_publisher = "Yugendran"
+# app_description = "A custom app for managing team tickets"
+# app_email = "Yugendran@usistech.com"
+# app_version = "0.0.1"
+# brand_html = '<img src="/assets/team_ticketing/images/logo.png" style="height: 20px;">'
+
+# app_logo_url = "/assets/team_ticketing/images/logo.png"
+# app_favicon = "/assets/team_ticketing/images/logo.png"
+
+#Email Footer
+
+# email_footer_address = "Kodivian Pvt Ltd"
+default_mail_footer = """
+ <div>
+Kodivian Pvt Ltd
+</div>
+"""
+
 # Overriding Methods
 # ------------------------------
 #
@@ -183,6 +249,10 @@ app_license = "mit"
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
 # 	"Task": "team_ticketing.task.get_dashboard_data"
+# }
+
+#This Used to Override the User Switch theme
+# override_whitelisted_methods = {
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -242,3 +312,44 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+########################################### FIXTURE BLOCK ################################################################
+
+
+#Fixtures
+# fixtures = [
+#     #custom fields
+#     {"dt": "Custom Field", "filters": [["name", "=", "Employee-custom_department_head"]]},
+
+#     #workflow states and Action
+#     {"dt": "Workflow", "filters": [["name", "=", "Team Ticketing"]]},
+#     {
+#         "doctype": "Workflow State",
+#         "filters": [["name", "in", ["Created","Submitted", "Approve", "Revise","Reject","Resolved","Escalated","Ticket Closed","Acknowledged"]]]
+#     },
+#     {
+#         "doctype": "Workflow Action Master",
+#         "filters": [["name", "in", ["Submit","Approve", "Revise", "Reject","Resolved","Escalate","Close Ticket","Re Submit","Acknowledge"]]]
+#     },
+#     # Roles
+#     {"dt": "Role", "filters": [["role_name", "in", ["HOD", "Ticket Manager", "Supporting staff"]]]},
+
+#     #Module Profile
+#      {"dt": "Module Profile", "filters": [["name", "in", ["Team Ticket"]]]},
+#     # Role Profiles
+#     {"dt": "Role Profile", "filters": [["name", "in", ["Employee and HOD", "Ticket manager","Supporting Staff","Employee"]]]},
+#     {"dt": "Has Role", "filters": [["parent", "in", ["Employee and HOD", "Ticket manager","Supporting Staff","Employee"]]]},
+#     # Custom DocPerms (Role Permissions Manager)
+#     {
+#         "dt": "Custom DocPerm",
+#         "filters": [
+#             ["parent", "in", [
+#                 "Projects",
+#                 "Tickets",
+#                 "Customers",
+#                 "Department",
+#             ]]
+#         ]
+#     },
+#  {"dt": "Custom HTML Block", "filters": [["name", "in", ["My Tickets", "Tickets Assigned To Me"]]]},
+# ]

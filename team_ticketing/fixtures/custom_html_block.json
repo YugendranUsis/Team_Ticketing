@@ -1,0 +1,38 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div id=\"my_task_block\">Loading...</div>\r\n",
+  "modified": "2025-08-22 10:03:54.724443",
+  "name": "Tickets Assigned To Me",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "Tickets Assigned To Me",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "All"
+   }
+  ],
+  "script": "frappe.call({\r\n    method: \"frappe.client.get_value\",\r\n    args: {\r\n        doctype: \"Employee\",\r\n        filters: { user_id: frappe.session.user },\r\n        fieldname: \"name\"\r\n    },\r\n    callback: function(res) {\r\n        if (res.message) {\r\n            let employee_id = res.message.name;\r\n\r\n            frappe.call({\r\n                method: \"frappe.client.get_count\",\r\n                args: {\r\n                    doctype: \"Tickets\",\r\n                    filters: { assign_to_user: employee_id }\r\n                },\r\n                callback: function(r) {\r\n                    let count = r.message || 0;\r\n                    let counts=root_element.querySelector('#my_task_block');\r\n                    counts.innerHTML = `\r\n                        <div class=\"widget number-widget-box\" \r\n                            onclick=\"window.location.href='/app/Tickets?assign_to_user=${employee_id}'\" \r\n                            style=\"cursor:pointer;height: 20vh;margin-top: -6px;\">\r\n                            <div class=\"widget-head\">\r\n                                <div class=\"widget-label\">\r\n                                    <div class=\"widget-title\">\r\n                                        <span class=\"ellipsis\" title=\"My Tasks\">My Tickets</span>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"widget-body\">\r\n                                <div class=\"widget-content\">\r\n                                    <div class=\"number\">${count}</div>\r\n                                    <div class=\"card-stats grey-stat\">\r\n                                        <span class=\"percentage-stat-area\"></span>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>`;\r\n                }\r\n            });\r\n        }\r\n    }\r\n});\r\n",
+  "style": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div id=\"my_task_block\">Loading...</div>\r\n",
+  "modified": "2025-08-21 16:52:11.761990",
+  "name": "My Tickets",
+  "private": 0,
+  "roles": [
+   {
+    "parent": "My Tickets",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
+    "role": "All"
+   }
+  ],
+  "script": "frappe.call({\r\n    method: \"frappe.client.get_count\",\r\n    args: {\r\n        doctype: \"Tickets\",\r\n        filters: { owner: frappe.session.user }\r\n    },\r\n    callback: function(r) {\r\n        let count = r.message || 0;\r\n        let counts= root_element.querySelector(\"#my_task_block\");\r\n        counts.innerHTML = `\r\n            <div class=\"widget number-widget-box\" \r\n                onclick=\"window.location.href='/app/tickets?owner=${frappe.session.user}'\" \r\n                style=\"cursor:pointer;height: 20vh;margin-top: -6px;\">\r\n                <div class=\"widget-head\">\r\n                    <div class=\"widget-label\">\r\n                        <div class=\"widget-title\">\r\n                            <span class=\"ellipsis\" title=\"My Tickets\">My Ticket</span>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"widget-body\">\r\n                    <div class=\"widget-content\">\r\n                        <div class=\"number\">${count}</div>\r\n                        <div class=\"card-stats grey-stat\">\r\n                            <span class=\"percentage-stat-area\"></span>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>`;\r\n    }\r\n});\r\n",
+  "style": null
+ }
+]
