@@ -338,7 +338,7 @@ Kodivian Pvt Ltd
 #      {"dt": "Module Profile", "filters": [["name", "in", ["Team Ticket"]]]},
 #     # Role Profiles
 #     {"dt": "Role Profile", "filters": [["name", "in", ["Employee and HOD", "Ticket manager","Supporting Staff","Employee"]]]},
-#     {"dt": "Has Role", "filters": [["parent", "in", ["Employee and HOD", "Ticket manager","Supporting Staff","Employee"]]]},
+# 
 #     # Custom DocPerms (Role Permissions Manager)
 #     {
 #         "dt": "Custom DocPerm",
