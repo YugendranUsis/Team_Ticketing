@@ -5,4 +5,7 @@ from erpnext.setup.doctype.department.department import Department as ERPNextDep
 class Department(ERPNextDepartment):
     def autoname(self):
         # custom naming series: DEPT - 00001, DEPT - 00002...
-        self.name = make_autoname("DEPT - .#####")
+        if self.department_name:
+            self.name = self.department_name.strip()
+        else:
+            frappe.throw("Department Name is required")
