@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Ticket Manager",
  "links": [],
- "modified": "2025-08-22 10:03:21.855569",
+ "modified": "2025-09-05 11:17:05.558880",
  "modified_by": "Administrator",
  "module": "Team Ticketing",
  "name": "Ticket Manager",
@@ -47,7 +47,11 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Supporting staff"
+  }
+ ],
  "sequence_id": 39.0,
  "shortcuts": [],
  "title": "Ticket Manager"
