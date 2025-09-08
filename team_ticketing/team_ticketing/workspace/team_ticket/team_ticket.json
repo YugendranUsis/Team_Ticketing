@@ -5,7 +5,7 @@
    "label": "My Tickets by Status"
   }
  ],
- "content": "[{\"id\":\"79_GNGbbwE\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Welcome</b></span>\",\"col\":12}},{\"id\":\"Lgr0YZAvAU\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Tickets\",\"col\":4}},{\"id\":\"JnHvzWc6rs\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Tickets\",\"col\":4}},{\"id\":\"A2mMjXhAN9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"My Tickets by Status\",\"col\":12}}]",
+ "content": "[{\"id\":\"79_GNGbbwE\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Welcome</b></span>\",\"col\":12}},{\"id\":\"Lgr0YZAvAU\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Tickets\",\"col\":4}},{\"id\":\"JnHvzWc6rs\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Tickets\",\"col\":4}},{\"id\":\"A2mMjXhAN9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"My Tickets by Status\",\"col\":12}},{\"id\":\"yUUyryYoA7\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
  "creation": "2025-08-11 16:02:18.362878",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "Team Ticket",
  "links": [],
- "modified": "2025-09-08 10:31:17.123190",
+ "modified": "2025-09-08 15:58:15.375416",
  "modified_by": "Administrator",
  "module": "Team Ticketing",
  "name": "Team Ticket",
