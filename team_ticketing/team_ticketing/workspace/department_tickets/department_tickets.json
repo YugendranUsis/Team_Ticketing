@@ -1,6 +1,15 @@
 {
- "charts": [],
- "content": "[{\"id\":\"BF1B2RJq8p\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Welcome</b></span>\",\"col\":12}},{\"id\":\"44oNWERU6B\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Tickets\",\"col\":4}},{\"id\":\"gi1_cjkrEm\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Tickets\",\"col\":4}},{\"id\":\"mGDdBvq_OH\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assigned To Me\",\"col\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Tickets by Priority",
+   "label": "Tickets by Priority"
+  },
+  {
+   "chart_name": "Tickets by Status",
+   "label": "Tickets by Status"
+  }
+ ],
+ "content": "[{\"id\":\"BF1B2RJq8p\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Welcome</b></span>\",\"col\":12}},{\"id\":\"44oNWERU6B\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Tickets\",\"col\":4}},{\"id\":\"gi1_cjkrEm\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Tickets\",\"col\":4}},{\"id\":\"mGDdBvq_OH\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Assigned To Me\",\"col\":4}},{\"id\":\"DicqHFHig7\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Tickets by Priority\",\"col\":6}},{\"id\":\"Idbh0zcgtk\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Tickets by Status\",\"col\":6}}]",
  "creation": "2025-08-21 17:22:15.305960",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +22,7 @@
  "is_hidden": 0,
  "label": "Department Tickets",
  "links": [],
- "modified": "2025-09-05 11:16:38.905953",
+ "modified": "2025-09-08 12:59:08.837539",
  "modified_by": "Administrator",
  "module": "Team Ticketing",
  "name": "Department Tickets",
