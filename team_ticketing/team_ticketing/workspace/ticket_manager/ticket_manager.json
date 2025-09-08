@@ -1,6 +1,11 @@
 {
- "charts": [],
- "content": "[{\"id\":\"9PRvlQryd3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome</span>\",\"col\":12}},{\"id\":\"avJmXriLBm\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Tickets\",\"col\":4}},{\"id\":\"-11JV04FBy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Submitted Tickets\",\"col\":4}},{\"id\":\"42ifuEjjPY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Tickets\",\"col\":4}},{\"id\":\"pFW0fBO5o7\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Revised Tickets\",\"col\":4}},{\"id\":\"BsBgK0tA-o\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Rejected Tickets\",\"col\":4}},{\"id\":\"jDiVTKS1wB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Closed Tickets\",\"col\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Tickets by Status",
+   "label": "Tickets by Status"
+  }
+ ],
+ "content": "[{\"id\":\"9PRvlQryd3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome</span>\",\"col\":12}},{\"id\":\"avJmXriLBm\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Tickets\",\"col\":4}},{\"id\":\"-11JV04FBy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Approval\",\"col\":4}},{\"id\":\"42ifuEjjPY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Tickets\",\"col\":4}},{\"id\":\"pFW0fBO5o7\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Revised Tickets\",\"col\":4}},{\"id\":\"BsBgK0tA-o\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Rejected Tickets\",\"col\":4}},{\"id\":\"jDiVTKS1wB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Closed Tickets\",\"col\":4}},{\"id\":\"kKvBVikAWB\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Tickets by Status\",\"col\":12}}]",
  "creation": "2025-08-21 17:02:57.123368",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +18,7 @@
  "is_hidden": 0,
  "label": "Ticket Manager",
  "links": [],
- "modified": "2025-09-05 11:26:50.300924",
+ "modified": "2025-09-08 10:19:34.308810",
  "modified_by": "Administrator",
  "module": "Team Ticketing",
  "name": "Ticket Manager",
@@ -39,7 +44,7 @@
    "number_card_name": "Closed Tickets"
   },
   {
-   "label": "Submitted Tickets",
+   "label": "Pending Approval",
    "number_card_name": "Submitted Tickets"
   }
  ],

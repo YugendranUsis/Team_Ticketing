@@ -1,11 +1,15 @@
 {
  "charts": [
   {
+   "chart_name": "Tickets by Priority",
+   "label": "Tickets by Priority"
+  },
+  {
    "chart_name": "Departments Tickets",
    "label": "Departments Tickets"
   }
  ],
- "content": "[{\"id\":\"79_GNGbbwE\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Welcome</b></span>\",\"col\":12}},{\"id\":\"R9sMGlJKFy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Employee\",\"col\":4}},{\"id\":\"61eApwEIiD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Tickets\",\"col\":4}},{\"id\":\"FBvOzZsbE1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Tickets\",\"col\":4}},{\"id\":\"V1wkwYeNcn\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Customers\",\"col\":4}},{\"id\":\"9qYh_AS0wE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Projects\",\"col\":4}},{\"id\":\"iYBXtg7B5I\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Departments Tickets\",\"col\":12}}]",
+ "content": "[{\"id\":\"79_GNGbbwE\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Welcome</b></span>\",\"col\":12}},{\"id\":\"7SHOoQpc-n\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Users\",\"col\":3}},{\"id\":\"R9sMGlJKFy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Employee\",\"col\":3}},{\"id\":\"61eApwEIiD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Tickets\",\"col\":3}},{\"id\":\"FBvOzZsbE1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Tickets\",\"col\":3}},{\"id\":\"V1wkwYeNcn\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Customers\",\"col\":3}},{\"id\":\"9qYh_AS0wE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Projects\",\"col\":3}},{\"id\":\"pTjHn5AV5y\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Department\",\"col\":3}},{\"id\":\"rh7sQfuZqE\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Tickets by Priority\",\"col\":6}},{\"id\":\"iYBXtg7B5I\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Departments Tickets\",\"col\":6}}]",
  "creation": "2025-08-20 12:21:34.143279",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,19 +17,27 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "retail",
- "idx": 0,
+ "idx": 1,
  "indicator_color": "",
  "is_hidden": 0,
  "label": "HOME",
  "links": [],
- "modified": "2025-08-22 09:59:34.160009",
+ "modified": "2025-09-08 12:21:41.710168",
  "modified_by": "Administrator",
  "module": "Team Ticketing",
  "name": "HOME",
  "number_cards": [
   {
+   "label": "Users",
+   "number_card_name": "Users"
+  },
+  {
    "label": "Employee",
    "number_card_name": "Employees"
+  },
+  {
+   "label": "Department",
+   "number_card_name": "Department"
   },
   {
    "label": "Total Tickets",

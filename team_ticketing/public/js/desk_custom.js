@@ -23,6 +23,58 @@ frappe.after_ajax(() => {
         `;
         document.head.appendChild(style);
     }
+
+
+	const allowed_roles = ["System Manager", "HOD", "Ticket Manager"];
+    const user_roles = frappe.boot.user.roles || [];
+	console.log("User Roles:", user_roles);
+
+    // Detect if current page is Report View
+    // const in_report_view = window.location.pathname.includes("/app/tickets/view/report");
+
+    // const toggle_menu_button = () => {
+    //     const menu_btns = document.querySelectorAll(".menu-btn-group");
+    //     menu_btns.forEach(el => {
+    //         if (in_report_view && allowed_roles.some(r => user_roles.includes(r))) {
+    //             el.style.display = "block";  // ✅ show in Report View for allowed roles
+    //         } else {
+    //             el.style.display = "none";   // 🚫 hide otherwise
+    //         }
+    //     });
+
+
+
+    // };
+	const toggle_menu_button = () => {
+        const in_report_view = frappe.get_route_str().includes("tickets/view/report");
+        const menu_btns = document.querySelectorAll(".menu-btn-group");
+
+        menu_btns.forEach(el => {
+            if (in_report_view && allowed_roles.some(r => user_roles.includes(r))) {
+                el.style.display = "block";   // ✅ show in Report View for allowed roles
+            } else {
+                el.style.display = "none";    // 🚫 hide otherwise
+            }
+        });
+    };
+
+    // Run once initially
+    toggle_menu_button();
+
+    // Run on route change
+    frappe.router.on("change", () => {
+        setTimeout(toggle_menu_button, 300);
+    });
+
+    // Watch DOM changes (for view switches without reload)
+    const observer = new MutationObserver(() => {
+        toggle_menu_button();
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
 });
 
 

@@ -31,12 +31,12 @@ app_include_js = [
     "assets/team_ticketing/js/about.js",
     "/assets/team_ticketing/js/desk_custom.js",
 ]
-# 
+#
 app_include_css = [
     "/assets/team_ticketing/css/custom.css",
 ]
 
-website_context = { 
+website_context = {
                    "splash_image": "/assets/team_ticketing/images/logo.png",
                    "favicon": "/assets/team_ticketing/images/logo.png",
                    "app_title": "Team Ticketing",
@@ -339,7 +339,7 @@ Kodivian Pvt Ltd
 #      {"dt": "Module Profile", "filters": [["name", "in", ["Team Ticket"]]]},
 #     # Role Profiles
 #     {"dt": "Role Profile", "filters": [["name", "in", ["Employee and HOD", "Ticket manager","Supporting Staff","Employee"]]]},
-# 
+#
 #     # Custom DocPerms (Role Permissions Manager)
 #     {
 #         "dt": "Custom DocPerm",
