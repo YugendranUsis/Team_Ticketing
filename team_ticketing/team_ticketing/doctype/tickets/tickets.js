@@ -104,6 +104,32 @@ frappe.ui.form.on("Tickets", {
 			});
 
 		}
+		//Show the resolution details and hide the Escalated status 
+		if (frm.doc.workflow_state == "Escalated" && frm.doc.owner ==  current_user) {
+            frm.set_df_property(escalation_reason, 'hidden', 1);
+			frm.set_df_property(supporting_staff_resolution_confirmation, 'hidden', 1);
+		}
+
+		if(frm.doc.workflow_state == "Revise"){
+			if(current_user != frm.doc.owner){
+				setTimeout(function() {
+                $.each(frm.fields_dict, function(fieldname, fieldobj) {
+                    $(fieldobj.$wrapper).find("input, textarea, select").prop("disabled", true);
+                });
+                // Optionally disable save button
+                frm.disable_save();
+            }, 500);
+				frm.disable_save();
+			}
+		}
+		let ws = localStorage.getItem("current_page");
+        if (ws) {
+            // Replace breadcrumbs manually
+            frappe.breadcrumbs.clear();
+            frappe.breadcrumbs.add(ws, frm.doctype);
+            frappe.breadcrumbs.update();
+        }
+
        	//Date fields only showing the current date and future dates it shows some error so need to use in last refresh event
 				frm.fields_dict.expected_date_of_resolution.datepicker.update({
 			minDate: new Date(frappe.datetime.get_today())
@@ -135,6 +161,16 @@ frappe.ui.form.on("Tickets", {
 						frm.set_df_property(field, 'hidden', true);
 					});
             }
+			if(frm.doc.workflow_state == "Revise"){
+			if(current_user != frm.doc.owner){
+				frm.set_read_only(); 
+			}
+			let ws = localStorage.getItem("current_page");
+			alert(ws)
+			if (ws) {
+				frappe.breadcrumbs.add(ws, frm.doctype);
+			}
+		}
     },
 
 	//this set assigner user in suport_staff name
@@ -186,7 +222,7 @@ frappe.ui.form.on("Tickets", {
 });
 
 
-
+/////////////////////////////Available Feature for workflow  button  mandatory fields in pop up model ////////////////////////////////////////////
 
 // function get_action_style(action) {
 //     switch(action.toLowerCase()) {

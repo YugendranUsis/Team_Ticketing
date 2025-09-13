@@ -1,0 +1,30 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.workflow_state != \"Escalated\"",
+ "creation": "2025-09-11 13:07:58.222389",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Tickets",
+ "enabled": 1,
+ "event": "Value Change",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "{% if doc.workflow_state == \"Submitted\" %}\nYour ticket {{ doc.name }} has been *submitted*. Our support team will review it shortly.\n\n{% elif doc.workflow_state == \"Approve\" %}\nYour ticket {{ doc.name }} has been *Approved*. Our team will proceed with the next steps.\n\n{% elif doc.workflow_state == \"Reject\" %}\nYour ticket {{ doc.name }} has been *Rejected*. Please review the comments or contact support for clarification.\n\n{% elif doc.workflow_state == \"Revise\" %}\nYour ticket {{ doc.name }} requires *more information*. Please update the ticket with the requested details so we can continue processing it.\n\n{% elif doc.workflow_state == \"Resolved\" %}\nYour ticket {{ doc.name }} has been *Resolved*.\n\nPlease take a moment to **verify** the resolution. If everything is fine, kindly **acknowledge** this ticket.\n\nIf you need further assistance or have any questions, feel free to **contact our support team**.\n\n{% elif doc.workflow_state == \"Ticket Closed\" %}\nYour ticket {{ doc.name }} is now *Closed*. Thank you for reaching out to our support team.\n\n{% endif %}",
+ "message_type": "HTML",
+ "modified": "2025-09-11 18:38:21.761643",
+ "modified_by": "Administrator",
+ "module": "Team Ticketing",
+ "name": "Team Ticketing Notification",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "owner"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 1,
+ "subject": "Your ticket {{ doc.name }} has been {{ doc.workflow_state }} .",
+ "value_changed": "workflow_state"
+}

@@ -11,7 +11,12 @@ def after_install():
     frappe.clear_cache()
     update_website_settings()
     stop_jobs_except_whitelist()
+    hide_navbar_items()
+    hide_doctype_global_search()
+    delete_all_departments()
+    disable_roles()
 
+#Update the Website Settings and System Settings
 def update_website_settings():
     # Paths to your app's public images
     base_path = "/assets/team_ticketing/images"
@@ -47,6 +52,11 @@ def update_website_settings():
     ss.email_footer_address = "Kodivian Pvt Ltd"   # remove ERPNext footer
     ss.disable_standard_email_footer=1
     ss.hide_footer_in_auto_email_reports=1
+    ss.login_with_email_link=0
+    ss.minimum_password_score=3
+    ss.password_reset_limit=100
+    ss.disable_system_update_notification=1
+    ss.link_field_results_limit=50
 
     # Save changes
     ss.flags.ignore_mandatory = True
@@ -55,15 +65,14 @@ def update_website_settings():
     frappe.db.commit()
 
 
-#we can set hide the unwanted doctypes in search
-# def execute():
-#     allow_search_doctypes = ["Employee", "Customers", "Projects","Department","Tickets","Email Queue","Website Settings","Role","Profile","Workflow","Workflow Action","Workflow State","Role Profile","Error Log","Report","Website Settings","Website Settings","Navbar Settings","Contact","Address","User","User Type","ToDo","Activity Log","File","DocType","Module Def","Custom Field","Custom Script","Property Setter","Print Format","Letter Head","Notification","Email Alert","Email Template","Event"]
+# we can set hide the unwanted doctypes in search
+def hide_doctype_global_search():
+    allow_search_doctypes = ["Employee", "Customers", "Projects","Department","Tickets"]
+    doctypes = frappe.get_all("DocType", filters={"istable": 0}, pluck="name")
 
-#     doctypes = frappe.get_all("DocType", filters={"istable": 0}, pluck="name")
-
-#     for doctype in doctypes:
-#         if doctype not in allow_search_doctypes:
-#             frappe.db.set_value("DocType", doctype, "read_only", 1)
+    for doctype in doctypes:
+        if doctype not in allow_search_doctypes:
+            frappe.db.set_value("DocType", doctype, "read_only", 1)
 
 
 #This We Need to Set the upload the images public when we setup the installation
@@ -75,7 +84,7 @@ class CustomFile(File):
             self.is_private = 0
 
 
-
+#Stop the Unwanted the Scheduled Jobs
 def stop_jobs_except_whitelist():
     # jobs you want to keep running
     whitelist = [
@@ -113,3 +122,35 @@ def stop_jobs_except_whitelist():
                 frappe.logger().info(f"Stopped job: {doc.method}")
         else:
             frappe.logger().info(f"Kept running: {job.method}")
+
+#this usedto hidden the unwanted things in navbar 
+def hide_navbar_items():
+    settings = frappe.get_single("Navbar Settings")
+
+    for item in settings.settings_dropdown:
+        if item.item_label not in ["About", "Log out", "Reload", "Toggle Theme"]:
+            item.hidden = 1
+
+    settings.save(ignore_permissions=True)
+    frappe.db.commit()  # optional, safe to leave
+
+#this will delete all department so we can configure from scratch
+def delete_all_departments():
+    departments = frappe.get_all("Department", pluck="name")
+    for dept in departments:
+        frappe.delete_doc("Department", dept, force=True, ignore_permissions=True)
+    frappe.db.commit()
+
+def disable_roles():
+    # List of roles you want to keep enabled
+    allowed_roles = ["Administrator","Admin","Ticket Manager","Supporting staff","HOD","Employee","System Manager","HR User"] 
+
+    # Get all roles in the system
+    all_roles = frappe.get_all("Role", fields=["name"])
+
+    for role in all_roles:
+        if role.name not in allowed_roles:
+            # Disable role
+            frappe.db.set_value("Role", role.name, "disabled", 1)
+
+    frappe.db.commit()

@@ -28,8 +28,14 @@ home_page = "/app/dashboard/Team Ticketing"
 
 #The below JS used for updating the about pop up page
 app_include_js = [
-    "assets/team_ticketing/js/about.js",
+    "/assets/team_ticketing/js/about.js",
     "/assets/team_ticketing/js/desk_custom.js",
+    "/assets/team_ticketing/js/user_custom.js",
+    "/assets/team_ticketing/js/employee_custom.js",
+    "/assets/team_ticketing/js/department_custom.js",
+    "/assets/team_ticketing/js/custom_theme.js",
+    "/assets/team_ticketing/js/tickets_listview.js",
+    
 ]
 #
 app_include_css = [
@@ -244,6 +250,12 @@ Kodivian Pvt Ltd
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "team_ticketing.event.get_events"
 # }
+
+override_whitelisted_methods = {
+    "frappe.core.doctype.user.user.switch_theme": "team_ticketing.override.custom_theme_set.theme_switcher"
+}
+
+
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -253,8 +265,7 @@ Kodivian Pvt Ltd
 # }
 
 #This Used to Override the User Switch theme
-# override_whitelisted_methods = {
-# }
+
 
 # exempt linked doctypes from being automatically cancelled
 #
@@ -326,20 +337,20 @@ Kodivian Pvt Ltd
 #     {"dt": "Workflow", "filters": [["name", "=", "Team Ticketing"]]},
 #     {
 #         "doctype": "Workflow State",
-#         "filters": [["name", "in", ["Created","Submitted", "Approve", "Revise","Reject","Resolved","Escalated","Ticket Closed","Acknowledged"]]]
+#         "filters": [["name", "in", ["Draft","Submitted", "Approve", "Revise","Reject","Resolved","Escalated","Ticket Closed","Acknowledged"]]]
 #     },
 #     {
 #         "doctype": "Workflow Action Master",
 #         "filters": [["name", "in", ["Submit","Approve", "Revise", "Reject","Resolved","Escalate","Close Ticket","Re Submit","Acknowledge"]]]
 #     },
 #     # Roles
-#     {"dt": "Role", "filters": [["role_name", "in", ["HOD", "Ticket Manager", "Supporting staff"]]]},
+#     {"dt": "Role", "filters": [["role_name", "in", ["HOD", "Ticket Manager", "Supporting staff","Admin"]]]},
 
 #     #Module Profile
 #      {"dt": "Module Profile", "filters": [["name", "in", ["Team Ticket"]]]},
 #     # Role Profiles
-#     {"dt": "Role Profile", "filters": [["name", "in", ["Employee and HOD", "Ticket manager","Supporting Staff","Employee"]]]},
-#
+#     {"dt": "Role Profile", "filters": [["name", "in", ["Employee and HOD", "Admin","Ticket manager","Supporting Staff","Employee"]]]},
+
 #     # Custom DocPerms (Role Permissions Manager)
 #     {
 #         "dt": "Custom DocPerm",
@@ -349,8 +360,13 @@ Kodivian Pvt Ltd
 #                 "Tickets",
 #                 "Customers",
 #                 "Department",
+#                 "User",
+#                 "Employee"
 #             ]]
 #         ]
 #     },
 #  {"dt": "Custom HTML Block", "filters": [["name", "in", ["My Tickets", "Tickets Assigned To Me"]]]},
+# #   Client Script belongs to our Custom App
+# {"dt": "Client Script", "filters": [["module", "=", "Team Ticketing"]]},
+
 # ]

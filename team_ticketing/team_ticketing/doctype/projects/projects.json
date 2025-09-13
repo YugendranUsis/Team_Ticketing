@@ -3,6 +3,7 @@
  "allow_rename": 1,
  "autoname": "PROJECT - .#####",
  "creation": "2025-08-09 15:54:44.966349",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -21,10 +22,11 @@
    "label": "Project Description"
   }
  ],
+ "force_re_route_to_default_view": 1,
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-09 15:55:35.106568",
+ "modified": "2025-09-11 12:26:58.531826",
  "modified_by": "Administrator",
  "module": "Team Ticketing",
  "name": "Projects",

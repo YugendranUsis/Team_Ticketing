@@ -1,41 +1,42 @@
 {
  "actions": [],
- "autoname": "Ticket - .#####",
+ "autoname": "TT.#####",
  "creation": "2025-08-09 15:23:13.866967",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "user_name",
-  "user_email_id",
-  "user_department",
+  "employee",
   "ticket_title",
   "ticket_description",
+  "priority",
   "expected_date_of_resolution",
   "column_break_fqax",
-  "priority",
   "assign_to_department",
   "assigned_department_head",
   "assign_to_user",
+  "support_staff_name",
   "project_code",
   "customer_name",
-  "support_staff_name",
   "attachment",
+  "column_break_megx",
+  "user_name",
+  "user_email_id",
+  "user_department",
   "ticket_resolution_confirmation",
   "section_break_weqd",
   "column_break_jkut",
-  "resolution_date_according_to_staff",
   "ticket_acceptance",
-  "reason_for_rejection",
+  "resolution_date_according_to_staff",
   "required_more_information",
+  "reason_for_rejection",
   "column_break_fzjn",
   "supporting_staff_resolution_confirmation",
   "resolution_notes",
   "escalation_reason",
+  "column_break_aqae",
   "department_head_action",
-  "section_break_ztyn",
-  "column_break_cmca",
   "resolution_comments",
-  "column_break_svsv",
   "closure_comments"
  ],
  "fields": [
@@ -75,6 +76,7 @@
    "fieldname": "assign_to_department",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Assign to Department",
    "options": "Department",
    "read_only_depends_on": "eval:doc.workflow_state==\"Submitted\"||doc.workflow_state==\"Approve\"||doc.workflow_state==\"Reject\"||doc.workflow_state==\"Resolved\"||doc.workflow_state==\"Escalated\"||\r\ndoc.workflow_state==\"Acknowledged\"||doc.workflow_state==\"Ticket Closed\"",
@@ -110,6 +112,8 @@
   {
    "fieldname": "priority",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Priority",
    "options": "Low\nMedium\nHigh",
    "read_only_depends_on": "eval:doc.workflow_state==\"Submitted\"||doc.workflow_state==\"Approve\"||doc.workflow_state==\"Reject\"||doc.workflow_state==\"Resolved\"||doc.workflow_state==\"Escalated\"||\r\ndoc.workflow_state==\"Acknowledged\"||doc.workflow_state==\"Ticket Closed\""
@@ -212,10 +216,6 @@
    "label": "Ticket Resolution Confirmation"
   },
   {
-   "fieldname": "column_break_cmca",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "assign_to_user",
    "fieldtype": "Link",
    "ignore_user_permissions": 1,
@@ -245,25 +245,30 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_ztyn",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_svsv",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "ticket_description",
    "fieldtype": "Small Text",
    "label": "Ticket Description",
    "read_only_depends_on": "eval:doc.workflow_state==\"Submitted\"||doc.workflow_state==\"Approve\"||doc.workflow_state==\"Reject\"||doc.workflow_state==\"Resolved\"||doc.workflow_state==\"Escalated\"||\r\ndoc.workflow_state==\"Acknowledged\"||doc.workflow_state==\"Ticket Closed\"",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_megx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_aqae",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Section Break"
   }
  ],
+ "force_re_route_to_default_view": 1,
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-01 12:17:22.201494",
+ "modified": "2025-09-13 12:52:09.226033",
  "modified_by": "Administrator",
  "module": "Team Ticketing",
  "name": "Tickets",

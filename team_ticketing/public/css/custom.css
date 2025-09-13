@@ -17,15 +17,16 @@ footer .text-muted {
 .layout-side-section { display: none !important; }
 
 /* (Optional) Report sidebar */
-/* .report-sidebar { display: none !important; } */
+.report-sidebar { display: none !important; }
 
-/* .form-message-container{ display: none !important; } */
+/* workflow status message in showing navbar so need to hide this  */
+.form-message-container{ display: none !important; }
 
 /* .input-group.search-bar.text-muted{ display: none !important;} */
 
 /* hide the menu button in view page*/
-/* .menu-btn-group{ display: none !important;} */
-/* .standard-actions .flex{ display: none !important;} */
+.menu-btn-group{ display: none !important;} 
+.standard-actions .flex{ display: none !important;}
 
 /* Workspace button below of workspace edit and add  */
 .workspace-footer{ display: none !important;}
@@ -36,14 +37,73 @@ footer .text-muted {
     display: none !important;
 }
 
+/* this related to notification */
 .nav-item.dropdown.dropdown-notifications.chat-navbar-icon {
     display: none !important;
 }
 
+/* this related to notification */
 #changelog_feed,#todays_events,#chat-bubble{
      display: none !important;
 }
 
 .p-3.chat-bubble{
     display: none !important;
+}
+
+/* workspace number cards dropdown items */
+.widget-control{
+    display: none !important;
+}
+
+/* this will hide the fillters in list view */
+.filter-selector{
+    display: none !important;
+}
+/* this for hiding the view like listview,reportview */
+.custom-btn-group{
+    display: none !important;
+}
+
+/* hide the connection tab and More information tab in User Dotype */
+#user-connections_tab-tab,#user-short_bio-tab{
+    display: none !important;
+}
+
+/* hide the sorting in the list view */
+.sort-selector{
+    display: none !important;
+}
+
+/* hide the user when mulyiple user view in view page */
+.form-viewers{
+    display: none !important;
+}
+
+/* hide the toggle sidebar button in list view */
+.sidebar-toggle-btn{
+    display: none !important;
+}
+
+/* Bulk Edit in workflow */
+.user-action{
+    display: none !important;
+}
+
+/* In list view remove the like,commemt */
+.list-row-activity {
+    display: none !important;
+}
+
+/* In list view remove the empty space already we removed the like,commemt */
+.level-right{
+    display: none !important;
+}
+/* In list view remove the empty space already we removed the like,commemt */
+.level-right.text-muted.ellipsis{
+    display: none !important;
+}
+
+.list-subject{
+    flex: 1 !important;
 }

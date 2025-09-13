@@ -50,12 +50,6 @@
     "parenttype": "Module Profile"
    },
    {
-    "module": "Custom",
-    "parent": "Team Ticket",
-    "parentfield": "block_modules",
-    "parenttype": "Module Profile"
-   },
-   {
     "module": "EDI",
     "parent": "Team Ticket",
     "parentfield": "block_modules",
@@ -69,18 +63,6 @@
    },
    {
     "module": "Frappe Chat",
-    "parent": "Team Ticket",
-    "parentfield": "block_modules",
-    "parenttype": "Module Profile"
-   },
-   {
-    "module": "Helpdesk",
-    "parent": "Team Ticket",
-    "parentfield": "block_modules",
-    "parenttype": "Module Profile"
-   },
-   {
-    "module": "HR",
     "parent": "Team Ticket",
     "parentfield": "block_modules",
     "parenttype": "Module Profile"
@@ -202,7 +184,7 @@
   ],
   "docstatus": 0,
   "doctype": "Module Profile",
-  "modified": "2025-08-21 13:41:42.083980",
+  "modified": "2025-09-11 11:04:31.783201",
   "module_profile_name": "Team Ticket",
   "name": "Team Ticket"
  }

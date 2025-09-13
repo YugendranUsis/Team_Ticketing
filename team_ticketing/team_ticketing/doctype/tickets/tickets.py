@@ -40,6 +40,13 @@ class Tickets(Document):
         if self.workflow_state=="Acknowledged":
             if not self.ticket_resolution_confirmation  :
                 frappe.throw("Ticket Resolution Confirmation is mandatory when ticket is Acknowledged.")
+        
+        if self.workflow_state=="Submitted":
+            self.ticket_acceptence=""
+            #self.save(ignore_permission=True)
+            #frappe.db.commit()
+
+
 
     def on_update(self):
         # Only send when it CHANGES to "Submitted"
@@ -47,6 +54,7 @@ class Tickets(Document):
             old_state = self.get_doc_before_save().workflow_state
             if old_state != "Submitted":  # state changed
                 send_ticket_notification(self)
+
 
 def has_permission(doc, user=None):
     # Always allow checking, actual filter happens in query
@@ -202,7 +210,6 @@ def send_ticket_notification(doc):
     if doc.attachment:
         frappe.sendmail(
             recipients=[email],
-            cc=["yugendran@usistech.com"],
             subject=subject,
             message=message,
             attachments=[{
@@ -214,7 +221,6 @@ def send_ticket_notification(doc):
     else:
         frappe.sendmail(
             recipients=[email],
-            cc=["yugendran@usistech.com"],
             subject=subject,
             message=message
         )
@@ -261,3 +267,50 @@ action_field_map = {
         {"fieldname": "ticket_resolution_confirmation", "fieldtype": "Check", "label": "Ticket Resolution Confirmation", "reqd": 1}
     ],
 }
+
+
+
+#this used for showing current user tickets in worksapce
+@frappe.whitelist()
+def my_tickets():
+    """Return number card data filtered by current user (owner)."""
+
+    # Count records of a Doctype for the logged-in user
+    count = frappe.db.count("Tickets", filters={"owner": frappe.session.user})
+
+    return {
+        "value": count,
+        "fieldtype": "Int",  # or Currency, Percent, etc.
+        "route_options": {
+            "owner": frappe.session.user
+        },
+        "route": ["List", "Tickets"]  # where clicking the card should go
+    }
+
+
+@frappe.whitelist()
+def team_tickets():
+    user = frappe.session.user
+    roles=frappe.get_roles(user)
+
+    """Return number card data excluding current user as owner."""
+    employee = frappe.db.get_value(
+        "Employee",
+        {"user_id": frappe.session.user},
+        "name"
+    )
+    count = frappe.db.count("Tickets", filters={
+        "owner": ["!=", frappe.session.user],
+        "workflow_state": ["=", "Approve"],
+        "assign_to_user" :["=",employee]  # you can add more filters if needed
+    })
+
+    return {
+        "value": count,
+        "fieldtype": "Int",
+        "route_options": {
+            "owner": ["!=", frappe.session.user],
+            "workflow_state": ["=", "Approve"]
+        },
+        "route": ["List", "Tickets"]
+    }

@@ -1,0 +1,35 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Employee",
+  "enabled": 1,
+  "modified": "2025-09-13 12:38:09.456055",
+  "module": "Team Ticketing",
+  "name": "Employee List view",
+  "script": "frappe.listview_settings['Employee'] = {\n\trefresh: function(listview) {\n\t   \t$(\"use.like-icon\").hide();\n        $(\".comment-count\").hide();\n\t    $(\".frappe-timestamp\").hide();\n\t    $(\".avatar-small\").hide();\n        setTimeout(() => {\n            $(\".dropdown-menu .menu-item-label\").each(function() {\n                let allowed = [\"Edit\", \"Export\", \"Delete\"];\n                let label = $(this).attr(\"data-label\");\n\n                // If this item is not allowed → remove its <li>\n                if (!allowed.includes(label)) {\n                    $(this).closest(\"li\").remove();\n                }\n            });\n        }, 500);\n\t}\n\n};\n",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Customers",
+  "enabled": 1,
+  "modified": "2025-09-13 12:39:06.730907",
+  "module": "Team Ticketing",
+  "name": "Customer list view",
+  "script": "frappe.listview_settings['Customers'] = {\n\trefresh: function(listview) {\n\t   \t$(\"use.like-icon\").hide();\n        $(\".comment-count\").hide();\n\t    $(\".frappe-timestamp\").hide();\n\t    $(\".avatar-small\").hide();\n        setTimeout(() => {\n            $(\".dropdown-menu .menu-item-label\").each(function() {\n                let allowed = [\"Edit\", \"Export\", \"Delete\"];\n                let label = $(this).attr(\"data-label\");\n\n                // If this item is not allowed → remove its <li>\n                if (!allowed.includes(label)) {\n                    $(this).closest(\"li\").remove();\n                }\n            });\n        }, 500);\n\t}\n\n};\n",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Projects",
+  "enabled": 1,
+  "modified": "2025-09-13 12:40:15.664757",
+  "module": "Team Ticketing",
+  "name": "Projects list view",
+  "script": "frappe.listview_settings['Customers'] = {\n\trefresh: function(listview) {\n\t   \t$(\"use.like-icon\").hide();\n        $(\".comment-count\").hide();\n\t    $(\".frappe-timestamp\").hide();\n\t    $(\".avatar-small\").hide();\n        setTimeout(() => {\n            $(\".dropdown-menu .menu-item-label\").each(function() {\n                let allowed = [\"Edit\", \"Export\", \"Delete\"];\n                let label = $(this).attr(\"data-label\");\n\n                // If this item is not allowed → remove its <li>\n                if (!allowed.includes(label)) {\n                    $(this).closest(\"li\").remove();\n                }\n            });\n        }, 500);\n\t}\n\n};\n",
+  "view": "List"
+ }
+]
