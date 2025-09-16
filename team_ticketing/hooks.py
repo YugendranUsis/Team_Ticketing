@@ -171,7 +171,8 @@ has_permission = {
 
 override_doctype_class = {
     "File": "team_ticketing.setup.install.CustomFile",
-    "Department": "team_ticketing.override.department.Department"
+    "Department": "team_ticketing.override.department.Department",
+    "Employee": "team_ticketing.override.employee.Employee"
 }
 
 
