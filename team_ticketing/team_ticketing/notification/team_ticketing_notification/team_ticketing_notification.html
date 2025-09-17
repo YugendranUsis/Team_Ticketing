@@ -1,23 +1,23 @@
 {% if doc.workflow_state == "Submitted" %}
-Your ticket {{ doc.name }} has been *submitted*. Our support team will review it shortly.
+Your ticket {{ doc.name }} has been submitted. Our support team will review it shortly.
 
 {% elif doc.workflow_state == "Approve" %}
-Your ticket {{ doc.name }} has been *Approved*. Our team will proceed with the next steps.
+Your ticket {{ doc.name }} has been Approved. Our team will proceed with the next steps.
 
 {% elif doc.workflow_state == "Reject" %}
-Your ticket {{ doc.name }} has been *Rejected*. Please review the comments or contact support for clarification.
+Your ticket {{ doc.name }} has been Rejected. Please review the comments or contact support for clarification.
 
 {% elif doc.workflow_state == "Revise" %}
-Your ticket {{ doc.name }} requires *more information*. Please update the ticket with the requested details so we can continue processing it.
+Your ticket {{ doc.name }} requires more information. Please update the ticket with the requested details so we can continue processing it.
 
 {% elif doc.workflow_state == "Resolved" %}
-Your ticket {{ doc.name }} has been *Resolved*.
+Your ticket {{ doc.name }} has been Resolved.
 
-Please take a moment to **verify** the resolution. If everything is fine, kindly **acknowledge** this ticket.
+Please take a moment to verify the resolution. If everything is fine, kindly acknowledge this ticket.
 
 If you need further assistance or have any questions, feel free to **contact our support team**.
 
 {% elif doc.workflow_state == "Ticket Closed" %}
-Your ticket {{ doc.name }} is now *Closed*. Thank you for reaching out to our support team.
+Your ticket {{ doc.name }} is now Closed. Thank you for reaching out to our support team.
 
 {% endif %}

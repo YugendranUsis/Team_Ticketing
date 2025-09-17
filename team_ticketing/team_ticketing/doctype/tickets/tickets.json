@@ -218,10 +218,10 @@
   {
    "fieldname": "assign_to_user",
    "fieldtype": "Link",
-   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "Assign to User",
    "options": "Employee",
+   "read_only_depends_on": "eval:doc.workflow_state==\"Submitted\"||doc.workflow_state==\"Approve\"||doc.workflow_state==\"Reject\"||doc.workflow_state==\"Resolved\"||doc.workflow_state==\"Escalated\"||\r\ndoc.workflow_state==\"Acknowledged\"||doc.workflow_state==\"Ticket Closed\"",
    "remember_last_selected_value": 1,
    "reqd": 1
   },
@@ -268,7 +268,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-13 12:52:09.226033",
+ "modified": "2025-09-17 15:31:46.620711",
  "modified_by": "Administrator",
  "module": "Team Ticketing",
  "name": "Tickets",

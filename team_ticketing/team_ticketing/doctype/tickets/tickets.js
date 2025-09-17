@@ -109,19 +109,37 @@ frappe.ui.form.on("Tickets", {
             frm.set_df_property(escalation_reason, 'hidden', 1);
 			frm.set_df_property(supporting_staff_resolution_confirmation, 'hidden', 1);
 		}
+		if(current_user != frm.doc.owner){
+		            $wrapper.find(".attached-file-actions button,.link-btn").prop("disabled", true).css("pointer-events", "none");
+					// also disable file input
+					$wrapper.find("[data-fieldtype='Attach Image']").prop("disabled", true);
+					$wrapper.find("[data-action='clear_attachment']").prop("disabled", true);
+		}
 
 		if(frm.doc.workflow_state == "Revise"){
 			if(current_user != frm.doc.owner){
 				setTimeout(function() {
                 $.each(frm.fields_dict, function(fieldname, fieldobj) {
-                    $(fieldobj.$wrapper).find("input, textarea, select").prop("disabled", true);
-                });
+					let $wrapper = $(fieldobj.$wrapper);
+
+					// disable inputs, textareas, selects
+					$wrapper.find("input, textarea, select").prop("disabled", true);
+
+					// disable attachment field actions (Clear / Upload)
+					$wrapper.find(".attached-file-actions button,.link-btn").prop("disabled", true).css("pointer-events", "none");
+
+					// also disable file input
+					$wrapper.find("[data-fieldtype='Attach Image']").prop("disabled", true);
+					$wrapper.find("[data-action='clear_attachment']").prop("disabled", true);
+				});
+
                 // Optionally disable save button
                 frm.disable_save();
             }, 500);
 				frm.disable_save();
 			}
 		}
+		
 		let ws = localStorage.getItem("current_page");
         if (ws) {
             // Replace breadcrumbs manually

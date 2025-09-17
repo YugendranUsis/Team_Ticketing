@@ -9,7 +9,7 @@
    "label": "Total Tickets by Priority"
   }
  ],
- "content": "[{\"id\":\"4xWzMYH9u4\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">My Tickets</span>\",\"col\":12}},{\"id\":\"4zwyNX9-PV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Tickets\",\"col\":4}},{\"id\":\"wxCAiwEoxV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Rejected Tickets\",\"col\":4}},{\"id\":\"daHOgAz-N0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Revised Tickets\",\"col\":4}},{\"id\":\"_XHUYkObOG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Need to Acknowledge\",\"col\":4}},{\"id\":\"DGmwlDT2K8\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Closed Tickets\",\"col\":4}},{\"id\":\"JUds3_MMjd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Acknowledged Tickets\",\"col\":4}},{\"id\":\"lArjGLbfkw\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Total Tickets by Status\",\"col\":12}},{\"id\":\"t7TBcn_ovS\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Total Tickets by Priority\",\"col\":12}}]",
+ "content": "[{\"id\":\"4xWzMYH9u4\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome</span>\",\"col\":12}},{\"id\":\"4zwyNX9-PV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Tickets\",\"col\":4}},{\"id\":\"wxCAiwEoxV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Rejected Tickets\",\"col\":4}},{\"id\":\"daHOgAz-N0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Need to Revise\",\"col\":4}},{\"id\":\"_XHUYkObOG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Need to Acknowledge\",\"col\":4}},{\"id\":\"DGmwlDT2K8\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Closed Tickets\",\"col\":4}},{\"id\":\"JUds3_MMjd\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Acknowledged Tickets\",\"col\":4}},{\"id\":\"lArjGLbfkw\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Total Tickets by Status\",\"col\":12}},{\"id\":\"t7TBcn_ovS\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Total Tickets by Priority\",\"col\":12}}]",
  "creation": "2025-09-11 10:12:51.474051",
  "custom_blocks": [],
  "docstatus": 0,
@@ -21,11 +21,15 @@
  "is_hidden": 0,
  "label": "My Tickets",
  "links": [],
- "modified": "2025-09-12 12:31:36.984017",
+ "modified": "2025-09-16 16:38:02.063801",
  "modified_by": "Administrator",
  "module": "Team Ticketing",
  "name": "My Tickets",
  "number_cards": [
+  {
+   "label": "Need to Revise",
+   "number_card_name": "Revised Tickets"
+  },
   {
    "label": "My Tickets",
    "number_card_name": "My Tickets"
@@ -37,10 +41,6 @@
   {
    "label": "Rejected Tickets",
    "number_card_name": "Rejected Tickets"
-  },
-  {
-   "label": "Revised Tickets",
-   "number_card_name": "Revised Tickets"
   },
   {
    "label": "Need to Acknowledge",
