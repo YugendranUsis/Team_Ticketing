@@ -76,9 +76,9 @@ def hide_doctype_global_search():
 
     for doctype in doctypes:
         if doctype in allow_search_doctypes:
-            frappe.db.set_value("DocType", doctype, "in_global_search", 1)  # enable
+            frappe.db.set_value("DocType", doctype, "read_only", 0)  # enable
         else:
-            frappe.db.set_value("DocType", doctype, "in_global_search", 0)  # disable
+            frappe.db.set_value("DocType", doctype, "read_only", 1)  # disable
 
     frappe.db.commit()
 
