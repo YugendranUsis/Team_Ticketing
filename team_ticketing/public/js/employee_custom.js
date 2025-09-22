@@ -4,6 +4,6 @@ frappe.ui.form.on("Employee", {
     setTimeout(() => {
             $('#form-tabs').css("display", "none");
         }, 100);
-        
+    $('[data-fieldname="naming_series"]').hide();
     }
 });

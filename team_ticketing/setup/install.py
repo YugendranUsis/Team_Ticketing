@@ -15,6 +15,7 @@ def after_install():
     hide_doctype_global_search()
     delete_all_departments()
     disable_roles()
+    set_user_quick_entry()
 
 #Update the Website Settings and System Settings
 def update_website_settings():
@@ -67,12 +68,20 @@ def update_website_settings():
 
 # we can set hide the unwanted doctypes in search
 def hide_doctype_global_search():
-    allow_search_doctypes = ["Employee", "Customers", "Projects","Department","Tickets"]
+    # Only these doctypes should appear in global search
+    allow_search_doctypes = ["Employee", "Customer", "Project", "Department", "Ticket"]
+
+    # Fetch all single doctypes (ignore child tables)
     doctypes = frappe.get_all("DocType", filters={"istable": 0}, pluck="name")
 
     for doctype in doctypes:
-        if doctype not in allow_search_doctypes:
-            frappe.db.set_value("DocType", doctype, "read_only", 1)
+        if doctype in allow_search_doctypes:
+            frappe.db.set_value("DocType", doctype, "in_global_search", 1)  # enable
+        else:
+            frappe.db.set_value("DocType", doctype, "in_global_search", 0)  # disable
+
+    frappe.db.commit()
+
 
 
 #This We Need to Set the upload the images public when we setup the installation
@@ -124,22 +133,25 @@ def stop_jobs_except_whitelist():
             frappe.logger().info(f"Kept running: {job.method}")
 
 #this usedto hidden the unwanted things in navbar 
-def hide_navbar_items():
-    settings = frappe.get_single("Navbar Settings")
+def hide_navbar_items_sql():
+    # Only keep About, Log out, Reload, Toggle Theme visible
+    allowed = ["About", "Log out", "Reload", "Toggle Theme"]
 
-    for item in settings.settings_dropdown:
-        if item.item_label not in ["About", "Log out", "Reload", "Toggle Theme"]:
-            item.hidden = 1
+    # Hide everything else
+    frappe.db.sql("""
+        UPDATE `tabNavbar Settings Item`
+        SET hidden = 1
+        WHERE item_label NOT IN (%s, %s, %s, %s)
+    """, tuple(allowed))
 
-    settings.save(ignore_permissions=True)
-    frappe.db.commit()  # optional, safe to leave
+    frappe.db.commit()
+
 
 #this will delete all department so we can configure from scratch
-def delete_all_departments():
-    departments = frappe.get_all("Department", pluck="name")
-    for dept in departments:
-        frappe.delete_doc("Department", dept, force=True, ignore_permissions=True)
+def delete_all_departments_sql():
+    frappe.db.sql("DELETE FROM `tabDepartment`")
     frappe.db.commit()
+
 
 def disable_roles():
     # List of roles you want to keep enabled
@@ -154,3 +166,8 @@ def disable_roles():
             frappe.db.set_value("Role", role.name, "disabled", 1)
 
     frappe.db.commit()
+
+def set_user_quick_entry():
+    if frappe.db.exists("DocField", {"parent": "User", "fieldname": "quick_entry"}):
+        frappe.db.set_value("DocField", {"parent": "User", "fieldname": "quick_entry"}, "quick_entry", 0)
+        frappe.db.commit()

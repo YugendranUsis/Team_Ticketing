@@ -30,5 +30,27 @@ frappe.ui.form.on("User", {
                         }
                     };
                 });
+        
+        frm.set_query("role_profile_name", function() {
+            return {
+                filters: {
+                    name: ["in", ["Admin", "Employee and HOD","Supporting Staff","Ticket manager","Employee"]]
+                }
+            };
+        });
+    }
+});
+
+frappe.ui.form.on("User", {
+    onload_post_render: function(frm) {
+        if (frm.fields_dict.role_profile_name) {
+            frm.fields_dict.role_profile_name.get_query = function() {
+                return {
+                    filters: {
+                        name: ["in", ["Admin", "Employee and HOD","Supporting Staff","Ticket manager","Employee"]]
+                    }
+                };
+            };
+        }
     }
 });
