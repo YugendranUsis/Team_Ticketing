@@ -133,18 +133,22 @@ def stop_jobs_except_whitelist():
             frappe.logger().info(f"Kept running: {job.method}")
 
 #this usedto hidden the unwanted things in navbar 
+
 def hide_navbar_items():
-    # Only keep About, Log out, Reload, Toggle Theme visible
     allowed = ["About", "Log out", "Reload", "Toggle Theme"]
 
-    # Hide everything else
-    frappe.db.sql("""
-        UPDATE `tabNavbar Settings Item`
-        SET hidden = 1
-        WHERE item_label NOT IN (%s, %s, %s, %s)
-    """, tuple(allowed))
+    # Get the single Navbar Settings doc
+    settings = frappe.get_single("Navbar Settings")
 
-    frappe.db.commit()
+    # Loop through child table items
+    for item in settings.settings_dropdown:
+        if item.item_label not in allowed:
+            item.hidden = 1
+        else:
+            item.hidden = 0  # ensure allowed items stay visible
+
+    settings.save(ignore_permissions=True)
+
 
 
 #this will delete all department so we can configure from scratch
