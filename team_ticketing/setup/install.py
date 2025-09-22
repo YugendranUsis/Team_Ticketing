@@ -133,7 +133,7 @@ def stop_jobs_except_whitelist():
             frappe.logger().info(f"Kept running: {job.method}")
 
 #this usedto hidden the unwanted things in navbar 
-def hide_navbar_items_sql():
+def hide_navbar_items():
     # Only keep About, Log out, Reload, Toggle Theme visible
     allowed = ["About", "Log out", "Reload", "Toggle Theme"]
 
@@ -148,7 +148,7 @@ def hide_navbar_items_sql():
 
 
 #this will delete all department so we can configure from scratch
-def delete_all_departments_sql():
+def delete_all_departments():
     frappe.db.sql("DELETE FROM `tabDepartment`")
     frappe.db.commit()
 
