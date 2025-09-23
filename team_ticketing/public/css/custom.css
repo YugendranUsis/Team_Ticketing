@@ -22,7 +22,7 @@ footer .text-muted {
 /* workflow status message in showing navbar so need to hide this  */
 .form-message-container{ display: none !important; }
 
-/* .input-group.search-bar.text-muted{ display: none !important;} */
+.input-group.search-bar.text-muted{ display: none !important; }
 
 /* hide the menu button in view page*/
 .menu-btn-group{ display: none !important;} 

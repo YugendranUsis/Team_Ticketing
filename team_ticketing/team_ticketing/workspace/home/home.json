@@ -9,7 +9,7 @@
    "label": "Departments Tickets"
   }
  ],
- "content": "[{\"id\":\"79_GNGbbwE\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Welcome</b></span>\",\"col\":12}},{\"id\":\"R9sMGlJKFy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Employee\",\"col\":4}},{\"id\":\"61eApwEIiD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Tickets\",\"col\":4}},{\"id\":\"FBvOzZsbE1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Resolved Tickets\",\"col\":4}},{\"id\":\"V1wkwYeNcn\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Customers\",\"col\":4}},{\"id\":\"9qYh_AS0wE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Projects\",\"col\":4}},{\"id\":\"pTjHn5AV5y\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Department\",\"col\":4}},{\"id\":\"rh7sQfuZqE\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Tickets by Priority\",\"col\":6}},{\"id\":\"iYBXtg7B5I\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Departments Tickets\",\"col\":6}}]",
+ "content": "[{\"id\":\"79_GNGbbwE\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Welcome</b></span>\",\"col\":12}},{\"id\":\"Va6-_hScKl\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Users\",\"col\":4}},{\"id\":\"R9sMGlJKFy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Employee\",\"col\":4}},{\"id\":\"61eApwEIiD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Tickets\",\"col\":4}},{\"id\":\"FBvOzZsbE1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Resolved Tickets\",\"col\":4}},{\"id\":\"KBjGngWNGV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Rejected Tickets\",\"col\":4}},{\"id\":\"V1wkwYeNcn\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Customers\",\"col\":4}},{\"id\":\"9qYh_AS0wE\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Projects\",\"col\":4}},{\"id\":\"pTjHn5AV5y\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Department\",\"col\":4}},{\"id\":\"Bp2lq0MN8q\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Closed Tickets\",\"col\":4}},{\"id\":\"rh7sQfuZqE\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Tickets by Priority\",\"col\":6}},{\"id\":\"iYBXtg7B5I\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Departments Tickets\",\"col\":6}}]",
  "creation": "2025-08-20 12:21:34.143279",
  "custom_blocks": [],
  "docstatus": 0,
@@ -22,11 +22,15 @@
  "is_hidden": 0,
  "label": "HOME",
  "links": [],
- "modified": "2025-09-10 14:53:39.880906",
+ "modified": "2025-09-22 17:12:18.700088",
  "modified_by": "Administrator",
  "module": "Team Ticketing",
  "name": "HOME",
  "number_cards": [
+  {
+   "label": "Total Users",
+   "number_card_name": "Users"
+  },
   {
    "label": "Employee",
    "number_card_name": "Employees"
@@ -36,12 +40,20 @@
    "number_card_name": "Department"
   },
   {
+   "label": "Total Resolved Tickets",
+   "number_card_name": "Resolved Tickets"
+  },
+  {
    "label": "Total Tickets",
    "number_card_name": "Total Tickets"
   },
   {
-   "label": "Resolved Tickets",
-   "number_card_name": "Resolved Tickets"
+   "label": "Total Rejected Tickets",
+   "number_card_name": "Rejected Tickets"
+  },
+  {
+   "label": "Total Closed Tickets",
+   "number_card_name": "Closed Tickets"
   },
   {
    "label": "Customers",
