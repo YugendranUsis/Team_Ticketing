@@ -10,10 +10,10 @@ def after_install():
 
     frappe.clear_cache()
     update_website_settings()
-    stop_jobs_except_whitelist()
+    # stop_jobs_except_whitelist()
     hide_navbar_items()
     hide_doctype_global_search()
-    delete_all_departments()
+    # delete_all_departments()
     disable_roles()
 
 #Update the Website Settings and System Settings
@@ -85,43 +85,43 @@ class CustomFile(File):
 
 
 #Stop the Unwanted the Scheduled Jobs
-def stop_jobs_except_whitelist():
-    # jobs you want to keep running
-    whitelist = [
-        "auto_email_report.send_monthly",
-        "backups.delete_downloadable_backups",
-        "deferred_insert.save_to_db",
-        "document_follow.send_hourly_updates",
-        "email_account.notify_unreplied",
-        "email_account.pull",
-        "email_digest.send",
-        "energy_point_log.send_monthly_summary",
-        "global_search.sync_global_search",
-        "google_calendar.sync",
-        "monitor.flush",
-        "notifications.clear_notifications",
-        "oauth.delete_oauth2_data",
-        "personal_data_deletion_request.process_data_deletion_request",
-        "prepared_report.expire_stalled_report",
-        "queue.flush",
-        "sessions.clear_expired_sessions",
-        "twofactor.delete_all_barcodes_for_users",
-        "user_settings.sync_user_settings",
-        "web_page.check_publish_status",
-    ]
+# def stop_jobs_except_whitelist():
+#     # jobs you want to keep running
+#     whitelist = [
+#         "auto_email_report.send_monthly",
+#         "backups.delete_downloadable_backups",
+#         "deferred_insert.save_to_db",
+#         "document_follow.send_hourly_updates",
+#         "email_account.notify_unreplied",
+#         "email_account.pull",
+#         "email_digest.send",
+#         "energy_point_log.send_monthly_summary",
+#         "global_search.sync_global_search",
+#         "google_calendar.sync",
+#         "monitor.flush",
+#         "notifications.clear_notifications",
+#         "oauth.delete_oauth2_data",
+#         "personal_data_deletion_request.process_data_deletion_request",
+#         "prepared_report.expire_stalled_report",
+#         "queue.flush",
+#         "sessions.clear_expired_sessions",
+#         "twofactor.delete_all_barcodes_for_users",
+#         "user_settings.sync_user_settings",
+#         "web_page.check_publish_status",
+#     ]
 
-    jobs = frappe.get_all("Scheduled Job Type", fields=["name", "method", "stopped"])
+#     jobs = frappe.get_all("Scheduled Job Type", fields=["name", "method", "stopped"])
 
-    for job in jobs:
-        if job.method not in whitelist:
-            doc = frappe.get_doc("Scheduled Job Type", job.name)
-            if not doc.stopped:
-                doc.stopped = 1
-                doc.save()
-                frappe.db.commit()
-                frappe.logger().info(f"Stopped job: {doc.method}")
-        else:
-            frappe.logger().info(f"Kept running: {job.method}")
+#     for job in jobs:
+#         if job.method not in whitelist:
+#             doc = frappe.get_doc("Scheduled Job Type", job.name)
+#             if not doc.stopped:
+#                 doc.stopped = 1
+#                 doc.save()
+#                 frappe.db.commit()
+#                 frappe.logger().info(f"Stopped job: {doc.method}")
+#         else:
+#             frappe.logger().info(f"Kept running: {job.method}")
 
 #this usedto hidden the unwanted things in navbar 
 def hide_navbar_items():
@@ -142,11 +142,11 @@ def hide_navbar_items():
     frappe.db.commit()  # optional, safe to leave
 
 #this will delete all department so we can configure from scratch
-def delete_all_departments():
-    departments = frappe.get_all("Department", pluck="name")
-    for dept in departments:
-        frappe.delete_doc("Department", dept, force=True, ignore_permissions=True)
-    frappe.db.commit()
+# def delete_all_departments():
+#     departments = frappe.get_all("Department", pluck="name")
+#     for dept in departments:
+#         frappe.delete_doc("Department", dept, force=True, ignore_permissions=True)
+#     frappe.db.commit()
 
 def disable_roles():
     # List of roles you want to keep enabled
