@@ -114,6 +114,8 @@ website_context = {
 
 # before_install = "team_ticketing.install.before_install"
 after_install = "team_ticketing.setup.install.after_install"
+boot_session = "team_ticketing.setup.install.check_license"
+
 
 # Uninstallation
 # ------------
